@@ -22,8 +22,8 @@ jobs:
       with:
         config: .kibot.yaml
         dir: gerber
-        board: single/tb2086-usb-c.kicad_pcb
-        schema: single/tb2086-usb-c.kicad_sch
+        board: kicad/tb2086-usb-c.kicad_pcb
+        schema: kicad/tb2086-usb-c.kicad_sch
 
     - name: Zip Gerber files
       run: |
