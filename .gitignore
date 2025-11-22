@@ -21,6 +21,7 @@ _autosave-*
 fp-info-cache
 ~*.lck
 \#auto_saved_files#
+*-backups
 
 # Netlist files (exported from Eeschema)
 *.net
@@ -38,3 +39,7 @@ fp-info-cache
 
 # Local project settings
 *.kicad_prl
+fp-info-cache
+
+# macOS
+.DS_Store
