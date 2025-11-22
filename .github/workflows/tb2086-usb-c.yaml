@@ -1,0 +1,38 @@
+name: TB2086 USB-C
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+*'
+
+  workflow_dispatch:
+
+jobs:
+  KiBot-Generation:
+    runs-on: ubuntu-latest  # Don't change
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Generate gerber for uniKey
+      uses: INTI-CMNB/KiBot@v1.7.0
+      with:
+        config: .kibot.yaml
+        dir: gerber
+        board: single/tb2086-usb-c.kicad_pcb
+        schema: single/tb2086-usb-c.kicad_sch
+
+    - name: Zip Gerber files
+      run: |
+          zip -r --junk-paths tb2086-usb-c.zip gerber
+
+    - name: GH Release
+      uses: softprops/action-gh-release@v2.0.4
+      with:
+        files: "*.zip"
+        draft: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
