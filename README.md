@@ -19,9 +19,11 @@ A compact USB-C breakout board designed for keyboard projects. This repository c
 | Conn_01x04             | J1           | Molex_Pico-EZmate_78171-0004_1x04-1MP_P1.                        | 1        |
 | USB_C_Receptacle_USB2.0_16P | USB1    | TYPE-C-31-M-14_HRO (mid mount)                    |              | 1        |
 
+![](imgs/tb2086-usb-c-front.png)
+![](imgs/tb2086-usb-c-back.png)
+
 ## Assembly Notes
 - All footprints are hand-solderable
 - Refer to schematic for signal mapping
 
-## License
-This project is open source. See LICENSE for details.
+![](imgs/tb2086-usb-c_panelized-front.png)
