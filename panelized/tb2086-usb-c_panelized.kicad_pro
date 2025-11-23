@@ -254,6 +254,34 @@
         "wire_width": 6
       },
       {
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "POWER",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "via_diameter": 0.6,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.19,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "VBUS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3,
+        "via_diameter": 0.6,
+        "via_drill": 0.3
+      },
+      {
         "bus_width": 12,
         "clearance": 0.19,
         "diff_pair_gap": 0.25,
@@ -528,34 +556,6 @@
         "track_width": 0.3,
         "via_diameter": 0.6,
         "via_drill": 0.3
-      },
-      {
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "POWER",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
-        "via_diameter": 0.6,
-        "via_drill": 0.3
-      },
-      {
-        "clearance": 0.19,
-        "diff_pair_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "VBUS",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3,
-        "via_diameter": 0.6,
-        "via_drill": 0.3
       }
     ],
     "meta": {
@@ -566,10 +566,6 @@
     "netclass_patterns": [
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-USB_DATA+"
-      },
-      {
-        "netclass": "Board_0-Default",
         "pattern": "Board_0-CC1"
       },
       {
@@ -578,19 +574,23 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-DATA-"
-      },
-      {
-        "netclass": "Board_0-Default",
         "pattern": "Board_0-GND"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-unconnected-(USB1-SBU2-PadB8)"
+        "pattern": "Board_0-USB_DATA+"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-DATA-"
       },
       {
         "netclass": "Board_0-Default",
         "pattern": "Board_0-DATA+"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-Net-(USB1-Shield)"
       },
       {
         "netclass": "Board_0-Default",
@@ -602,7 +602,7 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-Net-(USB1-Shield)"
+        "pattern": "Board_0-unconnected-(USB1-SBU2-PadB8)"
       },
       {
         "netclass": "Board_0-VBUS",
@@ -614,7 +614,31 @@
       },
       {
         "netclass": "Board_1-Default",
+        "pattern": "Board_1-CC1"
+      },
+      {
+        "netclass": "Board_1-Default",
+        "pattern": "Board_1-GND"
+      },
+      {
+        "netclass": "Board_1-Default",
         "pattern": "Board_1-DATA+"
+      },
+      {
+        "netclass": "Board_1-Default",
+        "pattern": "Board_1-USB_DATA-"
+      },
+      {
+        "netclass": "Board_1-Default",
+        "pattern": "Board_1-unconnected-(USB1-SBU1-PadA8)"
+      },
+      {
+        "netclass": "Board_1-Default",
+        "pattern": "Board_1-CC2"
+      },
+      {
+        "netclass": "Board_1-Default",
+        "pattern": "Board_1-USB_DATA+"
       },
       {
         "netclass": "Board_1-Default",
@@ -626,31 +650,7 @@
       },
       {
         "netclass": "Board_1-Default",
-        "pattern": "Board_1-CC2"
-      },
-      {
-        "netclass": "Board_1-Default",
         "pattern": "Board_1-Net-(USB1-Shield)"
-      },
-      {
-        "netclass": "Board_1-Default",
-        "pattern": "Board_1-GND"
-      },
-      {
-        "netclass": "Board_1-Default",
-        "pattern": "Board_1-USB_DATA+"
-      },
-      {
-        "netclass": "Board_1-Default",
-        "pattern": "Board_1-USB_DATA-"
-      },
-      {
-        "netclass": "Board_1-Default",
-        "pattern": "Board_1-CC1"
-      },
-      {
-        "netclass": "Board_1-Default",
-        "pattern": "Board_1-unconnected-(USB1-SBU1-PadA8)"
       },
       {
         "netclass": "Board_1-VBUS",
@@ -662,11 +662,19 @@
       },
       {
         "netclass": "Board_2-Default",
-        "pattern": "Board_2-USB_DATA-"
+        "pattern": "Board_2-CC2"
+      },
+      {
+        "netclass": "Board_2-Default",
+        "pattern": "Board_2-Net-(USB1-Shield)"
       },
       {
         "netclass": "Board_2-Default",
         "pattern": "Board_2-unconnected-(USB1-SBU2-PadB8)"
+      },
+      {
+        "netclass": "Board_2-Default",
+        "pattern": "Board_2-GND"
       },
       {
         "netclass": "Board_2-Default",
@@ -678,27 +686,19 @@
       },
       {
         "netclass": "Board_2-Default",
-        "pattern": "Board_2-CC1"
-      },
-      {
-        "netclass": "Board_2-Default",
         "pattern": "Board_2-DATA+"
       },
       {
         "netclass": "Board_2-Default",
-        "pattern": "Board_2-Net-(USB1-Shield)"
+        "pattern": "Board_2-USB_DATA-"
+      },
+      {
+        "netclass": "Board_2-Default",
+        "pattern": "Board_2-CC1"
       },
       {
         "netclass": "Board_2-Default",
         "pattern": "Board_2-DATA-"
-      },
-      {
-        "netclass": "Board_2-Default",
-        "pattern": "Board_2-GND"
-      },
-      {
-        "netclass": "Board_2-Default",
-        "pattern": "Board_2-CC2"
       },
       {
         "netclass": "Board_2-VBUS",
@@ -710,15 +710,11 @@
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-DATA+"
+        "pattern": "Board_3-unconnected-(USB1-SBU1-PadA8)"
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-GND"
-      },
-      {
-        "netclass": "Board_3-Default",
-        "pattern": "Board_3-USB_DATA-"
+        "pattern": "Board_3-USB_DATA+"
       },
       {
         "netclass": "Board_3-Default",
@@ -730,7 +726,11 @@
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-CC1"
+        "pattern": "Board_3-Net-(USB1-Shield)"
+      },
+      {
+        "netclass": "Board_3-Default",
+        "pattern": "Board_3-USB_DATA-"
       },
       {
         "netclass": "Board_3-Default",
@@ -738,15 +738,15 @@
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-Net-(USB1-Shield)"
+        "pattern": "Board_3-CC1"
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-unconnected-(USB1-SBU1-PadA8)"
+        "pattern": "Board_3-GND"
       },
       {
         "netclass": "Board_3-Default",
-        "pattern": "Board_3-USB_DATA+"
+        "pattern": "Board_3-DATA+"
       },
       {
         "netclass": "Board_3-VBUS",
@@ -758,11 +758,7 @@
       },
       {
         "netclass": "Board_4-Default",
-        "pattern": "Board_4-CC1"
-      },
-      {
-        "netclass": "Board_4-Default",
-        "pattern": "Board_4-GND"
+        "pattern": "Board_4-DATA+"
       },
       {
         "netclass": "Board_4-Default",
@@ -770,19 +766,7 @@
       },
       {
         "netclass": "Board_4-Default",
-        "pattern": "Board_4-DATA-"
-      },
-      {
-        "netclass": "Board_4-Default",
         "pattern": "Board_4-CC2"
-      },
-      {
-        "netclass": "Board_4-Default",
-        "pattern": "Board_4-USB_DATA+"
-      },
-      {
-        "netclass": "Board_4-Default",
-        "pattern": "Board_4-unconnected-(USB1-SBU1-PadA8)"
       },
       {
         "netclass": "Board_4-Default",
@@ -790,11 +774,27 @@
       },
       {
         "netclass": "Board_4-Default",
-        "pattern": "Board_4-DATA+"
+        "pattern": "Board_4-DATA-"
+      },
+      {
+        "netclass": "Board_4-Default",
+        "pattern": "Board_4-GND"
       },
       {
         "netclass": "Board_4-Default",
         "pattern": "Board_4-Net-(USB1-Shield)"
+      },
+      {
+        "netclass": "Board_4-Default",
+        "pattern": "Board_4-unconnected-(USB1-SBU1-PadA8)"
+      },
+      {
+        "netclass": "Board_4-Default",
+        "pattern": "Board_4-USB_DATA+"
+      },
+      {
+        "netclass": "Board_4-Default",
+        "pattern": "Board_4-CC1"
       },
       {
         "netclass": "Board_4-VBUS",
@@ -806,15 +806,15 @@
       },
       {
         "netclass": "Board_5-Default",
-        "pattern": "Board_5-DATA-"
-      },
-      {
-        "netclass": "Board_5-Default",
-        "pattern": "Board_5-unconnected-(USB1-SBU2-PadB8)"
+        "pattern": "Board_5-USB_DATA+"
       },
       {
         "netclass": "Board_5-Default",
         "pattern": "Board_5-GND"
+      },
+      {
+        "netclass": "Board_5-Default",
+        "pattern": "Board_5-CC2"
       },
       {
         "netclass": "Board_5-Default",
@@ -826,23 +826,23 @@
       },
       {
         "netclass": "Board_5-Default",
-        "pattern": "Board_5-Net-(USB1-Shield)"
-      },
-      {
-        "netclass": "Board_5-Default",
         "pattern": "Board_5-USB_DATA-"
       },
       {
         "netclass": "Board_5-Default",
-        "pattern": "Board_5-CC2"
+        "pattern": "Board_5-unconnected-(USB1-SBU2-PadB8)"
       },
       {
         "netclass": "Board_5-Default",
-        "pattern": "Board_5-USB_DATA+"
+        "pattern": "Board_5-Net-(USB1-Shield)"
       },
       {
         "netclass": "Board_5-Default",
         "pattern": "Board_5-unconnected-(USB1-SBU1-PadA8)"
+      },
+      {
+        "netclass": "Board_5-Default",
+        "pattern": "Board_5-DATA-"
       },
       {
         "netclass": "Board_5-VBUS",
