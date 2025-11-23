@@ -1,0 +1,41 @@
+name: TB2086 USB-C Panelized
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+*'
+
+  workflow_dispatch:
+
+jobs:
+  KiBot-Generation:
+    runs-on: ubuntu-latest  # Don't change
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Generate gerber for TB2086 USB-C Panelized
+      uses: INTI-CMNB/KiBot@v1.8.3
+      with:
+        config: .kibot.yaml
+        dir: gerber
+        board: panelized/tb2086-usb-c_panelized.kicad_pcb
+
+    - name: Zip Gerber files
+      run: |
+          zip -r --junk-paths tb2086-usb-c-panelized.zip gerber
+
+    - name: GH Release
+      uses: softprops/action-gh-release@v2.0.4
+      with:
+        files: "*.zip"
+        draft: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

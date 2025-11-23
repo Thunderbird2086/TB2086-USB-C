@@ -20,7 +20,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Generate gerber for uniKey
+    - name: Generate gerber for TB2086 USB-C
       uses: INTI-CMNB/KiBot@v1.8.3
       with:
         config: .kibot.yaml
