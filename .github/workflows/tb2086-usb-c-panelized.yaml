@@ -1,4 +1,4 @@
-name: TB2086 USB-C
+name: TB2086 USB-C Panelized
 
 on:
   pull_request:
@@ -20,13 +20,12 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Generate gerber for TB2086 USB-C
+    - name: Generate gerber for TB2086 USB-C Panelized
       uses: INTI-CMNB/KiBot@v1.8.3
       with:
         config: .kibot.yaml
         dir: gerber
-        board: kicad/tb2086-usb-c.kicad_pcb
-        schema: kicad/tb2086-usb-c.kicad_sch
+        board: panelized/tb2086-usb-c_panelized.kicad_pcb
 
     - name: Zip Gerber files
       run: |
@@ -39,3 +38,4 @@ jobs:
         draft: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
